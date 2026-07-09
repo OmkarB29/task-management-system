@@ -10,4 +10,6 @@ public class TaskRequestDTO {
     private String title;
     @NotBlank(message = "Description can not be empty")
     private String description;
+
+    private boolean completed;
 }
