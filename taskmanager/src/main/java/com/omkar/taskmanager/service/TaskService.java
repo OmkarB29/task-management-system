@@ -64,7 +64,7 @@ public class TaskService {
 
         existingTask.setTitle(updatedTask.getTitle());
         existingTask.setDescription(updatedTask.getDescription());
-
+        existingTask.setCompleted(updatedTask.isCompleted());
         Task saved = taskRepository.save(existingTask);
         logger.info("Updating Task {}", id);
         return taskMapper.toDTO(saved);

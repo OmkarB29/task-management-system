@@ -20,7 +20,7 @@ public class TaskMapper {
         Task task = new Task();
         task.setTitle(taskRequestDTO.getTitle());
         task.setDescription(taskRequestDTO.getDescription());
-
+        task.setCompleted(taskRequestDTO.isCompleted());
         return task;
     }
 
