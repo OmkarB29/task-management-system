@@ -1,6 +1,9 @@
 package com.omkar.taskmanager.entity;
+import com.omkar.taskmanager.user.User;
 import jakarta.persistence.*;
-
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -17,6 +20,10 @@ public class Task {
     private String description;
 
     private boolean completed;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id")
+    private User user;
 
 
 }

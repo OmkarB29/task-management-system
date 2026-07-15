@@ -4,7 +4,7 @@ import com.omkar.taskmanager.dto.TaskRequestDTO;
 import com.omkar.taskmanager.dto.TaskResponseDTO;
 import com.omkar.taskmanager.service.TaskService;
 import jakarta.validation.Valid;
-
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@SecurityRequirement(name = "Bearer Authentication")
 @RestController
 @RequestMapping("/api/tasks")
 public class TaskController {
